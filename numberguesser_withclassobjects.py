@@ -3,10 +3,10 @@ import random
 
 #Create classes
 
-class Comp_number:
+class CompNumber:
 
-    def __init__(self, number):
-        self.number = int(number)
+    def __init__(self):
+        self.number = random.randint(0, 101)
 
     def __repr__(self):
         return "self.number"
@@ -30,7 +30,7 @@ class Comp_number:
             print("Too low.")
 
 
-class Human_number:
+class HumanNumber:
 
     def __init__(self):
         self.number = 0
@@ -57,8 +57,8 @@ class Human_number:
 
 #Start program
 
-computer_number = Comp_number(random.randint(0, 101))
-human_number = Human_number()
+computer_number = CompNumber()
+human_number = HumanNumber()
 counter = 1
 
 human_number.get_number()
@@ -72,33 +72,3 @@ while not computer_number.check_guess(human_number.number):
 
 print("Congratulations, you guessed the number!")
 print("It took you " + str(counter) + " times to guess the number.")
-
-
-"""
-computer_number = random.randint(0 , 101)
-
-my_num = input("Pick a number between 0 and 100: ")
-my_num = int(my_num)
-
-while my_num < 0 or my_num > 100:
-    my_num = input("That number is not between 0 and 100, please try again: ")
-    my_num = int(my_num)
-
-counter = 1
-
-while my_num != computer_number:
-    if my_num - computer_number < 10 and computer_number - my_num < 10:
-        print("Getting close! ")
-    if my_num > computer_number:
-        my_num = input("Too high.  Guess again: ")
-        my_num = int(my_num)
-        counter += 1
-    else:
-        my_num = input("Too low.  Guess again: ")
-        my_num = int(my_num)
-        counter += 1
-
-counter = str(counter)
-print("Congratulations, you guessed the number!")
-print("It took you " + counter + " times to guess the number.")
-"""

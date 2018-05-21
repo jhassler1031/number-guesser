@@ -59,8 +59,7 @@ class Human_number:
 
 computer_number = Comp_number(random.randint(0, 101))
 human_number = Human_number()
-
-print(computer_number.number)
+counter = 1
 
 human_number.get_number()
 
@@ -68,7 +67,11 @@ while not computer_number.check_guess(human_number.number):
     computer_number.high_low(human_number)
     if computer_number.is_close(human_number):
         print("Getting close!")
+    counter += 1
     human_number.get_number()
+
+print("Congratulations, you guessed the number!")
+print("It took you " + str(counter) + " times to guess the number.")
 
 
 """
